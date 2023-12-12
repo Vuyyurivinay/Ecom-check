@@ -142,12 +142,20 @@ class ProductItemDetails extends Component {
             </div>
             <p className="product-description">{description}</p>
             <div className="label-value-container">
-              <p className="label">Available:</p>
-              <p className="value">{availability}</p>
+              <p className="label" htmlFor="available">
+                Available:
+              </p>
+              <p className="value" id="available">
+                {availability}
+              </p>
             </div>
             <div className="label-value-container">
-              <p className="label">Brand:</p>
-              <p className="value">{brand}</p>
+              <p className="label" htmlFor="brand">
+                Brand:
+              </p>
+              <p className="value" id="brand">
+                {brand}
+              </p>
             </div>
             <hr className="horizontal-line" />
             <div className="quantity-container">
@@ -157,7 +165,10 @@ class ProductItemDetails extends Component {
                 onClick={this.onDecrementQuantity}
                 data-testid="minus"
               >
-                <BsDashSquare className="quantity-controller-icon" />
+                <BsDashSquare
+                  aria-label="icon"
+                  className="quantity-controller-icon"
+                />
               </button>
               <p className="quantity">{quantity}</p>
               <button
@@ -166,7 +177,10 @@ class ProductItemDetails extends Component {
                 onClick={this.onIncrementQuantity}
                 data-testid="plus"
               >
-                <BsPlusSquare className="quantity-controller-icon" />
+                <BsPlusSquare
+                  aria-label="icon"
+                  className="quantity-controller-icon"
+                />
               </button>
             </div>
             <button type="button" className="button add-to-cart-btn">
